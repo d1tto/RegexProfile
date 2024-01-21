@@ -27,7 +27,7 @@ object Main extends App {
     for (i <- regexes.indices) {
       val regex = regexes(i)
       println(s"$fileName $i / ${regexes.size} $regex")
-      val regexFeature = new RegexFeature(regex)
+      val regexFeature = new RegexFeatureImpl(regex)
       features.foreach(f => regexFeature.addFeature(f))
       regexFeature.parse()
       if (regexFeature.hasFeature) {
