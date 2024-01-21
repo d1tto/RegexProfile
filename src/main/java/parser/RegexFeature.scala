@@ -9,7 +9,11 @@ enum Feature {
 class RegexFeature(pattern: String) {
   private val featureMap = Map(
     Feature.CaptureGroup -> List("capture1", "capture2", "capture3", "capture4"),
-    Feature.BackReference -> List("backreference1", "backreference5", "backreference9")
+    Feature.BackReference -> List(
+      "backreference1", "backreference2", "backreference3", "backreference4",
+      "backreference5", "backreference6", "backreference7", "backreference8",
+      "backreference9"
+    )
   )
 
   private val _features = mutable.Map.empty[Feature, Integer] withDefaultValue 0
@@ -29,7 +33,7 @@ class RegexFeature(pattern: String) {
     })
   }
 
-  def feature: Map[Feature, Integer] = _features.toMap
+  def feature: Map[Feature, Integer] = _features.toMap withDefaultValue 0
 }
 
 object RegexFeatureExample extends App {

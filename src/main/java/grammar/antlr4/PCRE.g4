@@ -133,13 +133,13 @@ character_class
 //         (?P=name)       reference by name (Python)
 backreference
  : backreference_or_octal # backreference1
-// | '\\g' number           # backreference2
-// | '\\g' '{' number '}'   # backreference3
-// | '\\g' '{' '-' number '}' # backreference4
+ | '\\g' number           # backreference2
+ | '\\g' '{' number '}'   # backreference3
+ | '\\g' '{' '-' number '}' # backreference4
  | '\\k' '<' name '>' # backreference5
-// | '\\k' '\'' name '\'' # backreference6
-// | '\\g' '{' name '}' # backreference7
-// | '\\k' '{' name '}' # backreference8
+ | '\\k' '\'' name '\'' # backreference6
+ | '\\g' '{' name '}' # backreference7
+ | '\\k' '{' name '}' # backreference8
  | '(' '?' 'P' '=' name ')' # backreference9
  ;
 
